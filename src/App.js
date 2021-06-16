@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useMemo } from 'react';
+import { createGlobalStyle } from 'styled-components';
+import Navbar from './components/Navbar';
+import ReactView from './components/ReactView.js';
+import { ThemeProvider } from './components/hooks/useTheme.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const GlobalStyle = createGlobalStyle`
+  body{
+    padding : 0px;
+    margin: 0px;
+    box-sizing : border-box;
+  }
+`;
+
+const App = () => {
+  const [select, setSelect] = useState('');
+  const value = useMemo(
+    () => ({
+      react: 'images/logo512.png',
+      angular: 'images/angular.png',
+      vue: 'images/vue.png',
+    }),
+    []
   );
-}
+  return (
+    <ThemeProvider value={value}>
+      <GlobalStyle />
+      <Navbar />
+      <ReactView />
+    </ThemeProvider>
+  );
+};
 
 export default App;
