@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { LiveProvider, LiveEditor } from 'react-live';
 import JSXResult from './JSXResult.js';
 
-const StyleEditor = styled(LiveEditor)`
+const StyleEditor = styled.div`
   background-color: black;
   caret-color: white;
+  max-height: 300px;
+  overflow: auto;
 `;
 const Header = styled.div((props) => ({
   backgroundColor: props.backgroundColor,
@@ -19,9 +21,9 @@ const Title = styled.div`
   letter-spacing: 0.1em;
 `;
 const Box = styled.div((props) => ({
-  overflow: 'hidden',
   borderRadius: props.radius,
   border: props.border,
+  overflow: 'hidden',
   flex: 1,
 }));
 
@@ -38,7 +40,9 @@ const JSXEditor = ({ code }) => {
           <Header backgroundColor='#333333'>
             <Title>Live JSX Editor</Title>
           </Header>
-          <StyleEditor />
+          <StyleEditor>
+            <LiveEditor />
+          </StyleEditor>
         </Box>
         <Box radius='0px 10px 10px 0px' border='1px solid #EF5350'>
           <Header backgroundColor='#EF5350'>
