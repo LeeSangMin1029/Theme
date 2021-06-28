@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from './Image.js';
 import { useThemeContext } from './hooks/useTheme.js';
+import JSXEditor from './JSXEditor.js';
 
 const Container = styled.div`
   display: flex;
@@ -105,6 +106,35 @@ const ReactView = () => {
               </p>
             </Description>
           </Section>
+          <Division />
+          <JSXEditor
+            code={`class Counter extends React.Component {
+  constructor() {
+    super()
+    this.state = { count: 0 }
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState(state => ({ count: state.count + 1 }))
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  render() {
+    return (
+      <center>
+        <h3>
+          {this.state.count}
+        </h3>
+      </center>
+    )
+  }
+}`}
+          />
           <Division />
         </Contents>
       </Container>
