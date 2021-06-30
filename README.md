@@ -5,7 +5,7 @@
 - [ ] navigation bar 비슷하게 스타일 적용
 
 ## React
-- [ ] Live JSX Editor 적용
+- [x] Live JSX Editor 적용
 
 ## Angular
 - [ ] 배경 스타일 최대한 똑같이 구현
