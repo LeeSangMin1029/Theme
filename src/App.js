@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Navbar from './components/Navbar';
 import ReactView from './components/ReactView.js';
@@ -10,10 +10,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     box-sizing : border-box;
   }
+  *{
+    padding: 0px;
+    margin: 0px;
+  }
 `;
 
 const App = () => {
-  const [select, setSelect] = useState('');
   const value = useMemo(
     () => ({
       react: 'images/logo512.png',
