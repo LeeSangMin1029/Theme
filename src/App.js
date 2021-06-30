@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Navbar from './components/Navbar';
 import ReactView from './components/ReactView.js';
