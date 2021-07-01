@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { ThemeProvider } from './components/hooks/useTheme.js';
+import { ThemeProvider } from './components/hooks/useTheme';
 import Navbar from './components/Navbar';
 import MainContent from './components/MainContent';
 

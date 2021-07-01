@@ -1,5 +1,5 @@
 import React from 'react';
-import JSXEditor from '../components/JSXEditor.js';
+import JSXEditor from '../components/JSXEditor';
 
 export default {
   component: JSXEditor,

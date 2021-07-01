@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
-import Image from './Image.js';
-import { useThemeContext } from './hooks/useTheme.js';
+import Image from './Image';
+import { useThemeContext } from './hooks/useTheme';
 
 const Container = styled.nav`
   display: flex;

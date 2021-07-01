@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Image from '../Image.js';
-import { useThemeContext } from '../hooks/useTheme.js';
-import JSXEditor from './JSXEditor.js';
+import Image from '../Image';
+import { useThemeContext } from '../hooks/useTheme';
+import JSXEditor from './JSXEditor';
 
 const Container = styled.div`
   display: flex;
