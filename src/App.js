@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import Navbar from './components/Navbar';
-import ReactView from './components/ReactView.js';
 import { ThemeProvider } from './components/hooks/useTheme.js';
+import Navbar from './components/Navbar';
+import MainContent from './components/MainContent';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -29,7 +29,7 @@ const App = () => {
     <ThemeProvider value={value}>
       <GlobalStyle />
       <Navbar />
-      <ReactView />
+      <MainContent />
     </ThemeProvider>
   );
 };
