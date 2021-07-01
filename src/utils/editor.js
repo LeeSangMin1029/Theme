@@ -1,3 +1,5 @@
+// 이 코드를 베이스로 하고 스타일은 prism을 이용할 계획이었으나
+// 무산되고 추후에 더 좋은 에디터를 만들기 위해서 참고용으로 남기기로 함
 /* eslint-disable */
 import ObjPath from 'object-path';
 import * as acorn from 'acorn';
