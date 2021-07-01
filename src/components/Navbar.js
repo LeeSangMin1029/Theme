@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Image from './Image';
 import { useThemeContext } from './hooks/useTheme';
 
@@ -36,6 +37,10 @@ const AnimationButton = styled(Button)`
   letter-spacing: 0;
   padding-left: 5px;
   font-size: 1.3em;
+  a {
+    color: white;
+    text-decoration: none;
+  }
   :hover,
   :active {
     letter-spacing: 3px;
@@ -80,7 +85,9 @@ const Navbar = () => {
       <List>
         <Item>
           <Image src={theme.react} alt='react_logo' width='30' height='30' />
-          <AnimationButton>React</AnimationButton>
+          <AnimationButton>
+            <Link to='/react'>React</Link>
+          </AnimationButton>
         </Item>
         <Item>
           <Image
@@ -89,11 +96,15 @@ const Navbar = () => {
             width='30'
             height='30'
           />
-          <AnimationButton>Angular</AnimationButton>
+          <AnimationButton>
+            <Link to='/angular'>Angular</Link>
+          </AnimationButton>
         </Item>
         <Item>
           <Image src={theme.vue} alt='vue_logo' width='30' height='30' />
-          <AnimationButton>Vue</AnimationButton>
+          <AnimationButton>
+            <Link to='/vue'>Vue</Link>
+          </AnimationButton>
         </Item>
       </List>
     </Container>
