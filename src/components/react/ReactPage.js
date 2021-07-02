@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Image from './Image.js';
-import { useThemeContext } from './hooks/useTheme.js';
-import JSXEditor from './JSXEditor.js';
+import Image from '../Image';
+import { useThemeContext } from '../hooks/useTheme';
+import JSXEditor from './JSXEditor';
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +56,34 @@ const Division = styled.hr`
   border-bottom: 1px solid #ececec;
 `;
 
-const ReactView = () => {
+const code = `class Counter extends React.Component {
+  constructor() {
+    super()
+    this.state = { count: 0 }
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState(state => ({ count: state.count + 1 }))
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  render() {
+    return (
+      <center>
+        <h3>
+          {this.state.count}
+        </h3>
+      </center>
+    )
+  }
+}`;
+
+const ReactPage = () => {
   const theme = useThemeContext();
   return (
     <>
@@ -107,34 +134,7 @@ const ReactView = () => {
             </Description>
           </Section>
           <Division />
-          <JSXEditor
-            code={`class Counter extends React.Component {
-  constructor() {
-    super()
-    this.state = { count: 0 }
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState(state => ({ count: state.count + 1 }))
-    }, 1000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
-
-  render() {
-    return (
-      <center>
-        <h3>
-          {this.state.count}
-        </h3>
-      </center>
-    )
-  }
-}`}
-          />
+          <JSXEditor code={code} />
           <Division />
         </Contents>
       </Container>
@@ -142,4 +142,4 @@ const ReactView = () => {
   );
 };
 
-export default ReactView;
+export default ReactPage;
