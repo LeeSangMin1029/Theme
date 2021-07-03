@@ -52,9 +52,9 @@ const JSXResult = withLive((props) => {
   );
 });
 
-const JSXEditor = ({ code }) => {
+const JSXEditor = ({ code, scope, noInline }) => {
   return (
-    <LiveProvider code={code}>
+    <LiveProvider code={code} scope={scope} noInline={noInline}>
       <Container>
         <Box radius='10px 0px 0px 10px'>
           <Header backgroundColor='#333333'>
