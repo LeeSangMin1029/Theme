@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from '../Image';
 import { useThemeContext } from '../hooks/useTheme';
-import JSXEditor from './JSXEditor';
+import ExampleView from './example/ExampleView';
 
 const Container = styled.div`
   display: flex;
@@ -56,33 +56,6 @@ const Division = styled.hr`
   border-bottom: 1px solid #ececec;
 `;
 
-const code = `class Counter extends React.Component {
-  constructor() {
-    super()
-    this.state = { count: 0 }
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState(state => ({ count: state.count + 1 }))
-    }, 1000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
-
-  render() {
-    return (
-      <center>
-        <h3>
-          {this.state.count}
-        </h3>
-      </center>
-    )
-  }
-}`;
-
 const ReactPage = () => {
   const theme = useThemeContext();
   return (
@@ -134,7 +107,7 @@ const ReactPage = () => {
             </Description>
           </Section>
           <Division />
-          <JSXEditor code={code} />
+          <ExampleView />
           <Division />
         </Contents>
       </Container>
